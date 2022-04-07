@@ -1,5 +1,5 @@
-Bread
-Butter
-Milk
-Eggs
-Juice
+Bread x 2
+Butter x 1
+Milk x 2
+Eggs x 5
+Juice x 2
