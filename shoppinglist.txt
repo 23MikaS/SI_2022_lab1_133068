@@ -2,4 +2,6 @@ Bread x 2
 Butter x 2
 Milk x 2
 Eggs x 5
-Juice x 3
+Juice x 2
+Cheese x 1
+Berrys x 10
