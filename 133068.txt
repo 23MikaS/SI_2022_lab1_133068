@@ -1,0 +1,168 @@
+4. 
+git clone https://github.com/23MikaS/SI_2022_lab1_133068
+
+5. 
+touch shoppinglist.txt  //creating txt docs
+git add shoppinglist.txt
+git commit -m "Adding a file"
+nano shoppinglist.txt // add 5 products
+cat shoppinglist.txt //check what is writen in the file
+git add shoppinglist.txt
+git commit -m "Add 5 items to the shopping list"
+
+6.
+git add shoppinglist.txt
+git commit -m "Add 5 items to the shopping list"
+
+7.
+git checkout -b branch1
+git checkout -b branch2
+
+8.
+$ git log
+commit e5b5f963f1ac9ff044418afb5d6dc47251bf8ad2 (HEAD -> branch2, master, branch1)
+Author: Mile Stoilkov <mile.stoilkov@axaptamasters.com>
+Date:   Fri Apr 8 01:33:16 2022 +0200
+
+    Add quantitites to the items
+
+commit 6c0f06312e9afa9ef6d37989e768af181f0ddda8
+Author: Mile Stoilkov <mile.stoilkov@axaptamasters.com>
+Date:   Fri Apr 8 01:28:16 2022 +0200
+
+    Add 5 items to the shopping list
+
+commit 9c1f601c8c579336f13189b7a1421e53557c45ef
+Author: Mile Stoilkov <mile.stoilkov@axaptamasters.com>
+Date:   Fri Apr 8 01:14:16 2022 +0200
+
+    Adding a file
+
+commit 48d5791331e4a049e9bded491a07024dd60f15a9 (origin/master, origin/HEAD)
+Author: 23MikaS <100364842+23MikaS@users.noreply.github.com>
+Date:   Thu Apr 7 18:56:43 2022 +0200
+
+    Update README.md
+
+commit e63b077aa0eae8274afee43331e7f9c84bdcc75c
+Author: 23MikaS <100364842+23MikaS@users.noreply.github.com>
+Date:   Thu Apr 7 18:56:09 2022 +0200
+
+    Initial commit
+:
+
+9. 
+git checkout master
+git push // sync all changes with the remote repo
+
+10. 
+git checkout branch1
+
+11.
+
+git add shoppinglist.txt
+git commit -m "Change quantity of item #5" //commiting the latest changes onto 'branch1'
+
+12.
+git checkout master //back to the master branch
+
+13.
+git add shoppinglist.txt
+git commit -m "Change quantity of item #2" //commiting the latest changes onto 'branch1'
+
+14.
+git push --all https://github.com/23MikaS/SI_2022_lab1_133068.git -u
+
+15. 
+git checkout branch2
+
+16.
+nano shoppinglist.txt
+git add shoppinglist.txt
+git commit -m "Modify item #4"
+
+17.
+git log
+commit 6c697bbe7506d1a7547810a232ce4cbc15fee78a (HEAD -> branch2)
+Author: Mile Stoilkov <mile.stoilkov@axaptamasters.com>
+Date:   Fri Apr 8 02:00:26 2022 +0200
+
+    Modify item #4
+
+commit e5b5f963f1ac9ff044418afb5d6dc47251bf8ad2 (origin/master, origin/HEAD, master)
+Author: Mile Stoilkov <mile.stoilkov@axaptamasters.com>
+Date:   Fri Apr 8 01:33:16 2022 +0200
+
+    Add quantitites to the items
+
+commit 6c0f06312e9afa9ef6d37989e768af181f0ddda8
+Author: Mile Stoilkov <mile.stoilkov@axaptamasters.com>
+Date:   Fri Apr 8 01:28:16 2022 +0200
+
+    Add 5 items to the shopping list
+
+commit 9c1f601c8c579336f13189b7a1421e53557c45ef
+Author: Mile Stoilkov <mile.stoilkov@axaptamasters.com>
+Date:   Fri Apr 8 01:14:16 2022 +0200
+
+    Adding a file
+
+commit 48d5791331e4a049e9bded491a07024dd60f15a9
+Author: 23MikaS <100364842+23MikaS@users.noreply.github.com>
+Date:   Thu Apr 7 18:56:43 2022 +0200
+
+    Update README.md
+
+
+18.
+git add shoppinglist.txt
+git commit --amend -m "Modify item #4 and add item #6" //adding to the last commit without doing new commit
+
+19.
+$ git log
+commit f28aa98ef54ed4f6d3f0326f6fa1ceb4d30455a2 (HEAD -> branch2)
+Author: Mile Stoilkov <mile.stoilkov@axaptamasters.com>
+Date:   Fri Apr 8 02:00:26 2022 +0200
+
+    Modify item #4 and add item #6
+
+commit e5b5f963f1ac9ff044418afb5d6dc47251bf8ad2 (origin/master, origin/HEAD, master)
+Author: Mile Stoilkov <mile.stoilkov@axaptamasters.com>
+Date:   Fri Apr 8 01:33:16 2022 +0200
+
+    Add quantitites to the items
+
+commit 6c0f06312e9afa9ef6d37989e768af181f0ddda8
+Author: Mile Stoilkov <mile.stoilkov@axaptamasters.com>
+Date:   Fri Apr 8 01:28:16 2022 +0200
+
+    Add 5 items to the shopping list
+
+commit 9c1f601c8c579336f13189b7a1421e53557c45ef
+Author: Mile Stoilkov <mile.stoilkov@axaptamasters.com>
+Date:   Fri Apr 8 01:14:16 2022 +0200
+
+    Adding a file
+
+commit 48d5791331e4a049e9bded491a07024dd60f15a9
+Author: 23MikaS <100364842+23MikaS@users.noreply.github.com>
+Date:   Thu Apr 7 18:56:43 2022 +0200
+
+    Update README.md
+
+20.
+git checkout master
+git merge branch1 // merging branch "branch1" to the branch "master" - fast forward method.
+
+21.
+git merge branch2 //merging branch "branch2" to the branch "master" - merging failed due to conflict
+
+Auto-merging shoppinglist.txt
+CONFLICT (content): Merge conflict in shoppinglist.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+nano shoppinglist.txt
+edit the list, including all the items, saving the file
+git add shoppinglist.txt
+git commit -m "Solving the conflicts"
+
